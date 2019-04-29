@@ -1,0 +1,10 @@
+$ export GS_HOME=$PWD
+$ export GS_LOG=$PWD/log
+
+$ bin/gs_passwd admin
+  #input your_password
+$ vi conf/gs_cluster.json
+  #    "clusterName":"your_clustername" #<-- input your_clustername
+$ export no_proxy=127.0.0.1
+$ bin/gs_startnode
+$ bin/gs_joincluster -c your_clustername -u admin/your_password
